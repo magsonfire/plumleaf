@@ -1,0 +1,23 @@
+<!-- Results page within survey.html -->
+<ion-view view-title = "{{ title }}">
+	<ion-content class="dyno-main-page-content-container scroll-content ionic-scroll has-header has-tabs">
+
+		<h3 class="dyno-main-page-content-title">Thank you for completing the survey</h3>
+
+		<ion-list>
+			<ion-item class="item item-divider dyno-breakdown-section-head">
+				Please Review Your Answers
+			</ion-item>
+	 		<div class="dyno-survey-paragraph" ng-repeat="ques in message">
+	 			<ion-item href="#/tabs/survey/$index">
+					<p class="dyno-survey-review-question">{{ ques.question }}</p>
+					<p class="dyno-survey-review-answer" ng-repeat="answer in ques.answers" >A: {{ answer }}</p>
+				</ion-item>
+			</div> 
+
+			<ion-item href="#/tabs/survey/0">Retake Quiz</ion-item>
+
+			<ion-item ng-click="clear()">Clear Data</ion-item>	
+		</ion-list>
+	</ion-content>
+</ion-view>

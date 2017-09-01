@@ -1,0 +1,37 @@
+<ion-view viewtitle="Lifestyle Survey">
+	<ion-nav-title>Lifestyle Survey</ion-nav-title>
+
+<ion-content class="dyno-survey-content">
+	<!-- survey quesiton card -->
+	<div class="list card survey dyno-survey-card">
+	 	<h3>
+		{{ Question.question }}
+	 	</h3> 
+
+	 	<ion-item class="dyno-survey-ion-item">
+		  	<ion-radio ng-repeat="answer in Question.check" color="dark" checked="true" class="radio-royal"
+		  		value="{{ answer }}" ng-click="check(answer)"> {{ answer.substr(1) }} </ion-radio>	
+
+		  	<ion-checkbox ng-repeat="answer in Question.check_multi" color="dark" checked="true" class="checkbox-royal"
+		  		value="{{ answer }}" ng-click="check(answer)"> {{ answer.substr(1) }} </ion-checkbox>
+	 	</ion-item>		 		
+	</div>
+
+	<!-- Menu buttons on bottom -->
+	<div class="dyno-button-bar-bottom-wrapper">
+		<div class="button-bar">
+		  <a class="button button-full button-royal dyno-button-bar-bottom" href="#/tab/survey/{{ prevQuestion }}">
+		  	<i class="icon ion-ios-arrow-left"></i>
+		  </a>
+		  <a class="button button-full button-royal dyno-button-bar-bottom" href="{{nextLink}}">
+			 <i class="icon ion-ios-arrow-right"></i>
+		  </a>
+		</div>
+	</div>
+	<!-- <a class="button button-full" ng-click="clear()">Clear Data</a> -->
+
+  	<!-- <a class="button button-full" ng-click="clear()">Review Your Answers</a>
+  	<a class="button button-full" ng-click="show()">Review Your Answers</a> -->
+
+</ion-content>
+</ion-view>

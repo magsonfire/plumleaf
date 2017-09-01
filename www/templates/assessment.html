@@ -1,0 +1,34 @@
+<ion-view viewtitle="Needs Assessment">
+	<ion-nav-title>Needs Assessment</ion-nav-title>
+
+	<ion-content class="dyno-main-page-content-container scroll-content ionic-scroll has-header has-tabs">
+		<!-- container class for visibility -->
+		
+		<!-- <h1>Your Projected Costs</h1> -->
+		<h3 class="dyno-main-page-content-title">Based on your survey answers, here is a breakdown of all the services you may require.</h3>
+
+		<h4 class="dyno-main-page-content-title">Please adjust these results as you see fit.</h4>
+
+		<!-- for each category -->
+		<ul class="list" ng-repeat="category in categories">
+		  <!-- Section Header -->
+		  <div class="item item-divider dyno-breakdown-section-head">
+		  	<!-- generate section header based on category name -->
+		  	{{category.category}}
+		  </div>
+		  <!-- then, within that list, under the header, 
+		  		iterate over category.items number of costs in costs -->
+		  <li class="item item-toggle" ng-repeat="cost in costs.slice(0, category.items)">
+		     <!-- add each cost as a toggle cue to the list -->
+		     {{cost.cost}}
+		     <label class="toggle toggle-dark">
+		       <input type="checkbox">
+		       <div class="track">
+		         <div class="handle"></div>
+		       </div>
+		     </label>
+		  </li>
+		</ul>
+	</ion-content>
+
+</ion-view>

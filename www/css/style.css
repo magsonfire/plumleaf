@@ -1,0 +1,141 @@
+/* Empty. Add your own CSS if you like */
+.button.button-large.button-positive {width: 49.5%;}
+.scroll.button {width:49.5%;}	
+
+.dyno-button-bar-bottom {
+/*	position: fixed;
+	width: 100%;
+	margin-bottom: 0;
+	vertical-align: bottom;
+	z-index: 9999;*/
+	border: 1px white solid;
+	border-radius: 0;
+	padding: 25px 0px 25px 0px;
+}
+/* OVERRIDES */
+
+ion-tabs.tabs-color-active-royal .tab-item.tab-item-active, ion-tabs.tabs-color-active-royal .tab-item.active, ion-tabs.tabs-color-active-royal .tab-item.activated {
+	color:#8A4B9E;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
+ color: #000;
+}
+
+.bar.bar-royal {
+	background: #692C7D;
+}
+
+.button.button-royal {
+	background: #8A4B9F;
+}
+
+ .royal.active,.button.button-full.button-royal.activated,.button.button-royal.activated, .button.button-royal:click,{
+	background-color: #692C7D !important;
+}
+
+
+/* Survey Area */
+
+.dyno-survey-content {
+	background: #692C7D;
+}
+
+.dyno-survey-card {
+	background: none;
+}
+
+.dyno-survey-card h3 {
+	text-align: center;
+	color: white;
+	padding: 70px 0 70px;
+}
+
+.dyno-survey-ion-item {
+	background: none;
+	border: none;
+	box-shadow: none;
+	/*display: inline-flex;*/
+	width: 100%;
+}
+
+.dyno-survey-ion-item label{
+	/*width: 50%;*/
+	text-align: left;
+
+}
+.dyno-main-page-content-container {
+	padding-top: 60px;
+}
+
+.dyno-main-page-content-title {
+	text-align: center;
+	margin: 0 7% 60px 7%; 
+}
+
+/* Projection Page */
+.dyno-total-breakdown-section {
+	margin: 50px 0;
+}
+
+.dyno-breakdown-total-item {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	font-size: 19px;
+}
+
+.dyno-breakdown-total-item i{
+	float: right;
+	font-size: 32px;
+}
+
+.dyno-breakdown-section-head {
+	background-color: #8A4B9E;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.dyno-breakdown-section-head i{
+	float: right;
+	font-size: 18px;
+}
+
+.dyno-section-monthly-initial {
+	display: inline-flex;
+	width: 100%;
+	padding: 0px;
+	font-weight: 400;
+}
+
+.dyno-section-monthly-initial div{
+	width: 50%;
+	height: 100%;
+	padding: 15px;
+	text-align: center;
+	border-left: 1px grey solid;
+	line-height: 25px;
+	margin: 0;
+
+}
+
+.dyno-breakdown-item i{
+	float: right;
+}
+
+/* Survey Review Page*/
+.dyno-survey-review-content {
+	margin-top: 50px;
+}
+
+.dyno-survey-review-question {
+	font-weight: 900;
+
+}
+
+.dyno-survey-review-answer.ng-binding, .dyno-survey-review-question.ng-binding{
+	font-size: 16px;
+	line-height: 35px;
+}

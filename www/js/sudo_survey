@@ -1,0 +1,165 @@
+function cal(home, high_mobility, cook, incontinant, medical_monitoring, medical_despencer
+	diabetic, living_with, need_legal ){
+	facility = !(home); // living in a facility   
+	//high_mobility =  Is able to get out of a chair
+	low_mobility = !(high_mobility); //  Unable to get out of a chair on their own
+	//cook =  true if they do not need meals prepared
+	// incontinant =  True if they are incontinant
+	
+	//medical_monitoring= "bool";
+	//medical_despencer = "bool";
+	//diabetic = "bool";
+	//transport_assistance = "bool";
+	
+	//living_with = true if they are living with their care giver
+	//need_legal =  true if they have to use legal advice to settle their assate
+	
+	one_time_cost = 0;
+	meal_cost = 0;
+	psw_hours = 0;
+	nurse_cost = 0
+	diabetic_yearly_cost = 0;
+	facility_cost = 0;
+	
+	psw_wage = 23;
+	
+	if (home){
+		if (low_mobility){
+			one_time_cost += 10200;
+		}else{
+			one_time_cost += 1290;
+		}
+		if (!cook){
+			if (incontinant){
+				if (!live_with){
+					psw_hours = 3 * 4;
+					meal_cost += 80;
+				}else{
+					psw_hours = 3 * 2;
+					meal_cost += 60;
+				}
+			}else{ // not incontinant
+				if (!live_with){
+					psw_hours = 3 * 2;
+					meal_cost += 38;
+				}else{
+					meal_cost += 30;
+				}
+			}
+		}
+	}else{
+		facility_cost += 3750;
+		} 
+	if (medical_monitoring){
+		nurse_cost += 30 * 7 * 3; 
+		}
+	if (medical_despencer){
+		one_time_cost += 800
+		}
+	if (diabetic){
+		diabetic_yearly_cost += 2050
+	}
+	if (need_legal){
+		one_time_cost += 500
+		} 
+	psw_cost = psw_hours * psw_wage;
+	
+	months = 12;
+	weeks = 52;
+	days = 5;
+	yearly_ cost = ((weeks * ((meal_cost * days) + psw_cost + nurse_cost)) + diabetic_yearly_cost) + months *(facility_cost);
+}
+
+
+.factory('costCalculator', function($localStorage) {
+	var TOTAL = 0;
+	var initTotal = 0;
+	var monthTotal = 0;
+
+	return {
+		getTotalCost: function(ansArr) {
+			//Mass assignment
+			var home = ansArr[0], 
+				high_mobility = ansArr[1], 
+				cook = ansArr[2], 
+				incontinant = ansArr[3], 
+				medical_monitoring = ansArr[4][1], 
+				medical_despencer = ansArr[4][2],
+				diabetic = ansArr[4][3], 
+				living_with = ansArr[5], 
+				need_legal = ansArr[6];
+
+			var boolArr = [];
+
+			// living in a facility   
+			//high_mobility =  Is able to get out of a chair
+			var low_mobility = !(high_mobility); //  Unable to get out of a chair on their own
+			//cook =  true if they do not need meals prepared
+			// incontinant =  True if they are incontinant
+			
+			//medical_monitoring= "bool";
+			//medical_despencer = "bool";
+			//diabetic = "bool";
+			//transport_assistance = "bool";
+			
+			//living_with = true if they are living with their care giver
+			//need_legal =  true if they have to use legal advice to settle their assate
+			
+			// Init costs
+			var one_time_cost = 0;
+			var meal_cost = 0;
+			var psw_hours = 0;
+			var nurse_cost = 0
+			var diabetic_yearly_cost = 0;
+			var facility_cost = 0;
+			
+			var psw_wage = 23;
+
+			if (home){
+				if (low_mobility){
+					one_time_cost += 10200;
+				}else{
+					one_time_cost += 1290;
+				}
+				if (!cook){
+					if (incontinant){
+						if (!live_with){
+							psw_hours = 3 * 4;
+							meal_cost += 80;
+						}else{
+							psw_hours = 3 * 2;
+							meal_cost += 60;
+						}
+					}else{ // not incontinant
+						if (!live_with){
+							psw_hours = 3 * 2;
+							meal_cost += 38;
+						}else{
+							meal_cost += 30;
+						}
+					}
+				}
+			}else{
+				facility_cost += 3750;
+				} 
+			if (medical_monitoring){
+				nurse_cost += 30 * 7 * 3; 
+				}
+			if (medical_despencer){
+				one_time_cost += 800
+				}
+			if (diabetic){
+				diabetic_yearly_cost += 2050
+			}
+			if (need_legal){
+				one_time_cost += 500
+				} 
+			var psw_cost = psw_hours * psw_wage;
+			
+			var months = 12;
+			var weeks = 52;
+			var days = 5;
+			var yearly_cost = ((weeks * ((meal_cost * days) + psw_cost + nurse_cost)) + diabetic_yearly_cost) + months *(facility_cost);
+		}
+	};
+});

@@ -1,0 +1,57 @@
+<ion-view viewtitle="Projected Costs">
+	<ion-nav-title>Projected Costs</ion-nav-title>
+
+	<ion-content class="dyno-main-page-content-container scroll-content ionic-scroll has-header has-tabs">
+		<!-- container class for visibility -->
+
+		<!-- <h1>Your Projected Costs</h1> -->
+		<h3 class="dyno-main-page-content-title">Based on your results, here is a compiled breakdown of expected one-time and monthly expenses you may expect.</h3>
+
+		<div class="list dyno-total-breakdown-section">
+		  <div class="item item-divider dyno-breakdown-total-item">
+		    Total Initial Costs
+
+		   	<!-- This is where the total goes -->
+		   	<i> {{InitTotal}} </i>
+		  </div>
+
+		  <div class="item item-divider dyno-breakdown-total-item">
+		    Total Yearly Costs
+
+		   	<!-- This is where the total goes -->
+		   	<i> {{YeaerTotal}} </i>
+		  </div>
+
+		  <div class="item item-divider dyno-breakdown-total-item">
+		    Total Monthly Costs
+
+		    <!-- This is where the total goes -->
+		    <i> {{MonthTotal}} </i>
+		  </div>
+		</div>
+
+		<div class="list">
+		  <!-- Section Header -->
+		  <div class="item item-divider dyno-breakdown-section-head">
+		  	At Home Care
+		  	<!-- Monitary Data Goes here -->
+		  	<i>15,000</i>
+		  </div>
+
+		  <!-- Initial/Monthly Breakdown -->
+		  <div class="item item-divider dyno-section-monthly-initial">
+		    <div>Total Monthly Costs </br> <i>3,500</i> </div>
+
+		    <!-- This is where the total goes -->
+		    <div>Total Monthly Costs </br> <i>3,500</i> </div>
+		  </div>
+
+
+		  <div class="item dyno-breakdown-item" href="#">
+		  	Home Renovations
+
+		  	<i>3,000-10,000</i>
+		  </div>
+		</div>
+	</ion-content>
+</ion-view>
